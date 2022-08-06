@@ -77,10 +77,10 @@ log "Configuring networks to join"
 mkdir -p /var/lib/zerotier-one/networks.d
 
 log_params "Joining networks:" $ZEROTIER_NETWORK
-for i in "$ZEROTIER_NETWORK"
+for net in $ZEROTIER_NETWORK
 do
   log_detail_params "Configuring join:" "$i"
-  touch "/var/lib/zerotier-one/networks.d/${i}.conf"
+  touch "/var/lib/zerotier-one/networks.d/${net}.conf"
 done
 
 log "Starting ZeroTier"
